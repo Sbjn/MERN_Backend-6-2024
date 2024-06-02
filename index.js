@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 
 
 // app.use((req, res, next) => {
-//   const allowedOrigins = [process.env.FRONEND_URL, 'https://sbjn-e-commerce-mern-2024-fi64n3mol-sbjns-projects.vercel.app', 'https://sbjn-e-commerce-mern-2024-fi64n3mol-sbjns-projects.vercel.app/', 'http://localhost:9000'];
+//   const allowedOrigins = [process.env.FRONEND_URL, 'https://sbjn-e-commerce-mern-2024.vercel.app', 'https://sbjn-e-commerce-mern-2024.vercel.app/', 'http://localhost:9000'];
 //   const origin = req.headers.origin;
  
 //   //res.header('Access-Control-Allow-Origin', process.env.FRONEND_URL);
