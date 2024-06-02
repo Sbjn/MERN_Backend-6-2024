@@ -10,9 +10,7 @@ const app = express()
 app.use((req, res, next) => {
   const allowedOrigins = [process.env.FRONEND_URL, 'https://sbjn-e-commerce-mern-2024-fi64n3mol-sbjns-projects.vercel.app', 'https://sbjn-e-commerce-mern-2024-fi64n3mol-sbjns-projects.vercel.app/', 'http://localhost:9000'];
   const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-       res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  }
+ 
   //res.header('Access-Control-Allow-Origin', process.env.FRONEND_URL);
   res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
