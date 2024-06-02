@@ -7,16 +7,29 @@ const router = require("./routes")
 
 
 const app = express()
+
 app.use((req, res, next) => {
-  const allowedOrigins = [process.env.FRONEND_URL, 'https://sbjn-e-commerce-mern-2024-fi64n3mol-sbjns-projects.vercel.app', 'https://sbjn-e-commerce-mern-2024-fi64n3mol-sbjns-projects.vercel.app/', 'http://localhost:9000'];
-  const origin = req.headers.origin;
- 
-  //res.header('Access-Control-Allow-Origin', process.env.FRONEND_URL);
-  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.header('Access-Control-Allow-Credentials', true);
-  return next();
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS, GET, POST, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
 });
+
+
+// app.use((req, res, next) => {
+//   const allowedOrigins = [process.env.FRONEND_URL, 'https://sbjn-e-commerce-mern-2024-fi64n3mol-sbjns-projects.vercel.app', 'https://sbjn-e-commerce-mern-2024-fi64n3mol-sbjns-projects.vercel.app/', 'http://localhost:9000'];
+//   const origin = req.headers.origin;
+ 
+//   //res.header('Access-Control-Allow-Origin', process.env.FRONEND_URL);
+//   res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//   res.header('Access-Control-Allow-Credentials', true);
+//   return next();
+// });
+/////////////////
 // app.use(cors({
 //     origin : process.env.FRONEND_URL,
 //     credentials: true
